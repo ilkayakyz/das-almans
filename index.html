@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Das Almans / Hareketli Çekim Moodboard’u</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#121212;--paper:#e8e4da;--ink:#f2eee4;--muted:#9a958b;
+  --line:#2c2c2c;--red:#e10600;--gold:#e8c9a0
+}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Arial,Helvetica,sans-serif}
+button,a{touch-action:manipulation}button{font:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--red)}
+a:hover{color:var(--red)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+
+.paper{max-width:1560px;margin:28px auto;background:var(--bg);padding:40px 44px 24px}
+.mast{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:22px;align-items:end;gap:16px}
+.mast h1{font:900 clamp(52px,7.5vw,108px)/.85 Impact,"Arial Black",Arial,sans-serif;margin:10px 0;letter-spacing:-.02em;text-transform:uppercase}
+.mast h1 em{font-style:normal;color:var(--red)}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:10px;color:var(--red);font-weight:700}
+.mast p{margin:4px 0;color:var(--muted);font-size:12px}
+.mast .right{text-align:right}
+.toggle{background:transparent;border:1px solid var(--line);color:var(--ink);padding:7px 12px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.toggle:hover{border-color:var(--red);color:var(--red)}
+
+h2{font:900 28px/1.1 Impact,Arial,sans-serif;margin:0 0 12px;text-transform:uppercase}
+h3{font-weight:700;font-size:14px;margin:4px 0;text-transform:uppercase}
+small{font-size:10px;color:var(--muted);letter-spacing:.05em}
+
+.layout{display:grid;grid-template-columns:220px 1fr;gap:32px;margin-top:28px}
+.brief h2{font-size:32px}
+.brief p{color:var(--muted);font-size:13px;line-height:1.65}
+.brief .strong{color:var(--ink);font-size:15px}
+.palette{display:flex;margin:22px 0 8px;height:32px;border:1px solid var(--line)}
+.palette i{flex:1}
+.swatchlabels{font-size:10px;color:var(--muted)}
+.rule{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}
+.rule b{color:var(--ink);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.rule p{margin:6px 0}
+.tag{display:inline-block;border:1px solid var(--red);color:var(--red);padding:2px 6px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin:0 4px 4px 0}
+
+.sectionhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 12px}
+.sectionhead h2{font-size:22px;margin:0}
+.sectionhead span{color:var(--muted);font-size:11px}
+
+.stills{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.still{position:relative;border:0;padding:0;background:#1a1a1a;overflow:hidden;aspect-ratio:3/4}
+.still img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.still:hover img{transform:scale(1.035)}
+.still span{position:absolute;bottom:0;left:0;right:0;padding:24px 6px 6px;background:linear-gradient(transparent,#000c);color:#fff;font-size:9px;letter-spacing:.04em;text-transform:uppercase}
+
+.motion{margin-top:30px}
+.films{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 12px}
+.vbutton{display:block;position:relative;aspect-ratio:9/14;border:0;padding:0;width:100%;background:#222;overflow:hidden}
+.vbutton video{width:100%;height:100%;object-fit:cover;display:block}
+.view{position:absolute;right:8px;bottom:8px;font-size:10px;background:#121212dc;color:var(--ink);padding:5px 8px;border:1px solid var(--red);letter-spacing:.05em;text-transform:uppercase}
+.badge{position:absolute;left:8px;top:8px;font-size:9px;background:var(--red);color:#fff;padding:3px 6px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.filmmeta{padding-top:8px}
+.filmmeta a{font-size:11px;color:var(--red);border:0}
+.note{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.55}
+
+.tepe{margin-top:28px;border-top:1px solid var(--line);padding-top:18px}
+.tepegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{border:1px solid var(--line);padding:14px;background:#101010;min-height:120px}
+.card .k{color:var(--red);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.card h3{margin:0 0 6px;font-size:14px}
+.card p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+
+.deliver{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.deliver p{font-size:12px;color:var(--muted);margin:4px 0}
+.deliver b{font-weight:700;color:var(--ink)}
+
+footer{display:flex;justify-content:space-between;gap:16px;font-size:10px;color:var(--muted);border-top:1px solid var(--line);margin-top:28px;padding-top:14px;flex-wrap:wrap}
+
+.dialog{border:1px solid #5a1a1a;background:var(--bg);color:var(--ink);width:min(1100px,94vw);padding:0;max-height:92vh}
+.dialog::backdrop{background:#000c}
+.dialogwrap{display:grid;grid-template-columns:37% 1fr;gap:26px;padding:26px}
+.dialog video,.dialog .stillshot{width:100%;max-height:74vh;object-fit:contain;background:#080808;display:block}
+.dialog h2{font-size:28px}
+.dialog p,.dialog li{font-size:13px;line-height:1.55;color:#d2cec4}
+.dialog ul{padding-left:18px;margin:6px 0}
+.dialog h4{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--red);margin:16px 0 4px}
+.close{position:sticky;top:0;float:right;z-index:2;border:0;background:var(--paper);color:#111;padding:9px 14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.source{font-size:11px;color:var(--muted)}
+.index{font:900 40px Impact,Arial,sans-serif;color:var(--red)}
+.tagpill{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:4px 0 6px}
+
+@media(max-width:980px){
+  .paper{margin:0;padding:22px}
+  .layout{grid-template-columns:1fr}
+  .stills{grid-template-columns:repeat(4,1fr)}
+  .films{grid-template-columns:repeat(2,1fr)}
+  .tepegrid,.deliver{grid-template-columns:1fr 1fr}
+  .dialogwrap{grid-template-columns:1fr 1.2fr;gap:14px;padding:18px}
+}
+@media(max-width:600px){
+  .mast{flex-direction:column;align-items:start}
+  .mast .right{text-align:left}
+  .stills{grid-template-columns:repeat(2,1fr)}
+  .films,.tepegrid,.deliver{grid-template-columns:1fr}
+  .dialogwrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main class="paper">
+  <header class="mast">
+    <div>
+      <div class="eyebrow">Çekim yönetimi / 2026 · @dasalmansdoner</div>
+      <h1>DAS <em>ALMANS</em></h1>
+      <p>BOX · GOBİT · DÜRÜM · TR + yurtdışı karışık pano</p>
+    </div>
+    <div class="right">
+      <div class="eyebrow">Fotoğraf + hareket</div>
+      <p>18 kare · 12 film · tek sahne espri</p>
+      <p>Tepe formatı · tıklanabilir not</p>
+      <button class="toggle" id="toggle" type="button">Hareketi durdur</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="brief">
+      <div class="intro">
+        <div class="eyebrow">Yaratıcı yön</div>
+        <h2>Karışık.<br>Kaliteli.<br>Bol.</h2>
+        <p class="strong">Beğenilen TR dil + yurtdışı sokak.<br>Her satır farklı jest.</p>
+        <p>Sofaburger peçete stamp’i, Vanta smash, Vamos tray; Gasoline POV, Goldies tabela, 7th Street tezgâh. Aynı smash close-up’ı peş peşe koyma.</p>
+      </div>
+      <div>
+        <div class="palette">
+          <i style="background:#121212"></i>
+          <i style="background:#e10600"></i>
+          <i style="background:#f2eee4"></i>
+          <i style="background:#b8bdc4"></i>
+        </div>
+        <div class="swatchlabels">SİYAH / KIRMIZI / BEYAZ / ÇELİK</div>
+      </div>
+      <div class="rule">
+        <b>Ürün</b>
+        <p><span class="tag">Box</span><span class="tag">Gobit</span><span class="tag">Dürüm</span></p>
+        <p>Sahne başına tek kahraman ürün.</p>
+      </div>
+      <div class="rule">
+        <b>Kaynak mix</b>
+        <p>TR: Sofa · Vanta · Vamos · Das Almans<br>INT: Gasoline · Goldies · 7th Street</p>
+      </div>
+      <div class="rule">
+        <b>Edit</b>
+        <p>Tek take → freeze → kırmızı yazı. Softbox yok.</p>
+      </div>
+    </aside>
+
+    <div>
+      <section>
+        <div class="sectionhead">
+          <h2>01 / Fotoğraf dili</h2>
+          <span>18 kare · 3 satır · tıkla not</span>
+        </div>
+        <div class="stills" id="stills"></div>
+      </section>
+
+      <section class="motion">
+        <div class="sectionhead">
+          <h2>02 / Hareket referansları</h2>
+          <span>12 film · 4 satır · MP4 loop</span>
+        </div>
+        <div class="films" id="films"></div>
+        <p class="note">Her satır farklı sahne tipi: POV sokak → process → smash → brand voice → lifestyle → combo → outdoor → mekân → present. Tıkla: Referans / Das Almans / Kamera / Çekim / Foto / Ses-Edit.</p>
+      </section>
+
+      <section class="tepe">
+        <div class="sectionhead">
+          <h2>03 / Das Almans’ta karşılığı</h2>
+          <span>kolay paket</span>
+        </div>
+        <div class="tepegrid">
+          <div class="card">
+            <div class="k">Teslim</div>
+            <h3>12 film + 18 foto</h3>
+            <p>~7 sn kesitler. Her filmden 4:5 kapak. Canva’ya sürükle.</p>
+          </div>
+          <div class="card">
+            <div class="k">Set</div>
+            <h3>Prop listesi</h3>
+            <p>Çelik tepsi, stamp peçete, sos kabı, Box, Gobit, Dürüm, ayran/cola, glove.</p>
+          </div>
+          <div class="card">
+            <div class="k">Ton</div>
+            <h3>Kirli ama net</h3>
+            <p>Grease lekesi var; steril tabak yok. Alman ironisi, bağırmadan.</p>
+          </div>
+          <div class="card">
+            <div class="k">Edit</div>
+            <h3>3 adım</h3>
+            <p>Aksiyon · freeze yazı · ses hit. Müzik düşük veya yok.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="deliver">
+        <div>
+          <b>TR referans</b>
+          <p>@sofaburgers · @vantaburgerr</p>
+          <p>@vamossmash · @dasalmansdoner</p>
+        </div>
+        <div>
+          <b>Yurtdışı</b>
+          <p>@gasolinegrill · Kopenhag</p>
+          <p>@goldies_smashburger · Berlin</p>
+          <p>@7thstreetburger · NYC</p>
+        </div>
+        <div>
+          <b>Plan B</b>
+          <p>Yağmurda outdoor → tezgâh/vitrin. Güneşte peçeteyi gölgeye al.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <div>DAS ALMANS · karışık moodboard · 30.09.2026</div>
+    <div>12 MP4 · 18 still · Tepe tıklanabilir not</div>
+  </footer>
+</main>
+
+<dialog class="dialog" id="dialog">
+  <button class="close" id="close" type="button">Kapat</button>
+  <div class="dialogwrap">
+    <div id="media"></div>
+    <div>
+      <div class="index" id="dindex"></div>
+      <div class="tagpill" id="dtag"></div>
+      <h2 id="dtitle"></h2>
+      <p class="source" id="dcredit"></p>
+      <p class="source" id="dlink"></p>
+      <h4>Referanstan aldığımız</h4>
+      <p id="dwhy"></p>
+      <h4>Das Almans’ta çekilecek</h4>
+      <p id="dapp"></p>
+      <h4>Kamera ve ışık</h4>
+      <p id="dcam"></p>
+      <h4>Çekim sırası</h4>
+      <ul id="dshots"></ul>
+      <h4>Fotoğraf karşılığı</h4>
+      <p id="dphoto"></p>
+      <h4>Ses + edit</h4>
+      <p id="dedit"></p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const refs=[
+  {id:'01-sos-kap',num:'01',title:'Kaldırımda sos kabı',tag:'POV · SOKAK',brand:'Gasoline Grill',creator:'@gasolinegrill',place:'Kopenhag',
+   url:'https://www.instagram.com/gasolinegrill/reel/Dd3da_JEWyd/',span:'00:00–00:06.5',
+   src:'assets/01-sos-kap.mp4',poster:'assets/01-sos-kap.jpg',
+   why:'POV + kaldırım + sos kapağı. Tek jest, yüksek iştah, ucuz prodüksiyon.',
+   app:'Box veya kraft torba kaldırıma. Kırmızı stamp peçete. Punchline: “Almansız olmaz.”',
+   cam:'Telefon POV 0.5–1x, doğal gün, bilek sabit.',
+   shots:['Torba/box yerde','Kapak yavaş açılır','Sos ürüne yaklaşır','Freeze + yazı'],
+   photo:'4:5 overhead. El + sos + stamp aynı kare.',
+   edit:'Tek take. Folyo sesi + bass. Yazı kırmızı condensed.'},
+  {id:'02-bun-press',num:'02',title:'Bun press',tag:'ÜRÜN · EL',brand:'Sofaburger',creator:'@sofaburgers',place:'Ankara',
+   url:'https://www.instagram.com/sofaburgers/reel/DdjXN4Zog4u/',span:'00:00–00:06.5',
+   src:'assets/02-bun-press.mp4',poster:'assets/02-bun-press.jpg',
+   why:'El basışı + beyaz peçete + kırmızı stamp. Das Almans paket dilinin çekirdeği.',
+   app:'Aynı basışı Gobit/Dürüm/Box’a uygula. Çelik tepsi sabit. Punchline: “Bastık, Alman.”',
+   cam:'Overhead 35/50, sıcak mutfak ışığı.',
+   shots:['Ürün peçetede','El basar, sos taşar','Drip detay','Stamp görünür'],
+   photo:'4:5 tepe üstü. Peçete yazısı okunur kalsın.',
+   edit:'Tek cut. Peçete + basış sesi.'},
+  {id:'03-sos-cizgi',num:'03',title:'Tek çizgide sos',tag:'PROCESS',brand:'Gasoline Grill',creator:'@gasolinegrill',place:'Kopenhag',
+   url:'https://www.instagram.com/gasolinegrill/reel/DdWBkYmAuX9/',span:'00:01–00:08',
+   src:'assets/03-sos-cizgi.mp4',poster:'assets/03-sos-cizgi.jpg',
+   why:'Squeeze bottle hipnoz. Tek aksiyon, tekrarlanabilir.',
+   app:'Açık gobit, kırmızı sos spiral. “Önce sos, sonra Alman.”',
+   cam:'Üst-açı tripod, tezgâh LED.',
+   shots:['Gobit sabit','Kesintisiz çizgi','Drip 1 sn','Yazı'],
+   photo:'Makro 4:5. Parmaklar kadraja girsin.',
+   edit:'x0.85. Sos sıkma sesi.'},
+  {id:'04-sofa-sos',num:'04',title:'Eldivenli sos',tag:'PROCESS · PREP',brand:'Sofaburger',creator:'@sofaburgers',place:'Ankara',
+   url:'https://www.instagram.com/sofaburgers/reel/DdGeKHrIKrT/',span:'00:01–00:08',
+   src:'assets/04-sofa-sos.mp4',poster:'assets/04-sofa-sos.jpg',
+   why:'Nitrile glove + peçete stamp + prep line. Büfe temposu.',
+   app:'Dürüm/gobit açılmadan sos. Stamp peçete Das Almans’a özel.',
+   cam:'Üst-açı 50 mm / 2x telefon.',
+   shots:['Ekmek hazır','Sos dökülür','Malzeme cut','Kağıda geçiş'],
+   photo:'Peçete + glove + sos üçlüsü.',
+   edit:'Hızlı cut 2–3. Metal kaşık sesi.'},
+  {id:'05-smash',num:'05',title:'Smash press',tag:'DIRTY',brand:'Vantaburger',creator:'@vantaburgerr',place:'Ankara',
+   url:'https://www.instagram.com/vantaburgerr/reel/DdYlAKHMrm4/',span:'00:02–00:09.5',
+   src:'assets/05-smash.mp4',poster:'assets/05-smash.jpg',
+   why:'Glove smash = dirty vaat. Melt / dantel kenar.',
+   app:'Press → Box / Gobit / Dürüm zinciri. Punchline: “Ez, erit, sar.”',
+   cam:'Makro 50/85, yandan sert ışık.',
+   shots:['Basış','Melt close','Spatula','Format geçişi'],
+   photo:'Dantel kenar + cheese zorunlu.',
+   edit:'Bass hit basışta. 1 freeze.'},
+  {id:'06-tabela',num:'06',title:'Tabela önü espri',tag:'BRAND VOICE',brand:'Goldies',creator:'@goldies_smashburger',place:'Berlin',
+   url:'https://www.instagram.com/goldies_smashburger/reel/DdqZbLBD3x6/',span:'00:02–00:09',
+   src:'assets/06-tabela.mp4',poster:'assets/06-tabela.jpg',
+   why:'Best bad food ironisi. İnsan + tabela = tutum.',
+   app:'Das Almans cephe. “Alman usulü, biraz kirli.” Elde Box/Gobit.',
+   cam:'28/35 bel üstü, gündüz.',
+   shots:['Tabela giriş','Tek cümle','Isırık','Logo freeze'],
+   photo:'Tabela + ürün aynı kare.',
+   edit:'Altyazı büyük. Punchline’da müzik kes.'},
+  {id:'07-musteri',num:'07',title:'Sokak müşteri',tag:'LIFESTYLE',brand:'Vantaburger',creator:'@vantaburgerr',place:'Ankara',
+   url:'https://www.instagram.com/vantaburgerr/reel/Dc2xhUHPyBL/',span:'00:01–00:08',
+   src:'assets/07-musteri.mp4',poster:'assets/07-musteri.jpg',
+   why:'İnsan + kırmızı tabela + ürün. Marka mekânda yaşar.',
+   app:'Şubede müşteri + DAS tabela. Ürün elde.',
+   cam:'35 mm bel üstü, iç ışık.',
+   shots:['Tabela + kişi','Ürün orta','Isırık','Kısa pan'],
+   photo:'Kırmızı tip tabela vur.',
+   edit:'Ambiyans + kısa bass.'},
+  {id:'08-icecek',num:'08',title:'İçecek + vitrin',tag:'COMBO',brand:'7th Street',creator:'@7thstreetburger',place:'NYC',
+   url:'https://www.instagram.com/7thstreetburger/reel/Dd2i-y2NFYD/',span:'00:00–00:06.5',
+   src:'assets/08-icecek.mp4',poster:'assets/08-icecek.jpg',
+   why:'Tek prop hero + cam yansıması. Combo ucuz ve net.',
+   app:'Ayran/kola + dürüm. “Dürüm’ün +1’i.”',
+   cam:'El seviyesi 35 mm.',
+   shots:['Şişe net','Dürüm girer','Yan yana','Yazı'],
+   photo:'Şişe kesilmesin.',
+   edit:'Zoom in 10%. Tıkırtı sesi.'},
+  {id:'09-tray',num:'09',title:'Outdoor tray',tag:'STREET SERVE',brand:'Vamos Smash',creator:'@vamossmash',place:'TR',
+   url:'https://www.instagram.com/vamossmash/reel/DdtW1S3MzPR/',span:'00:00–00:06.5',
+   src:'assets/09-tray.mp4',poster:'assets/09-tray.jpg',
+   why:'Dışarıda tepsi = sokak. Paper + fries combo.',
+   app:'Box tepside şube önü. Kırmızı–beyaz peçete zorunlu.',
+   cam:'El seviyesi 28/35, gün ışığı.',
+   shots:['Tepsi uzanır','Reveal','Kaldırım','Peçete close'],
+   photo:'Tray hero 4:5.',
+   edit:'Whoosh + freeze yazı.'},
+  {id:'10-tezgah',num:'10',title:'Tezgâh yürüyüşü',tag:'MEKÂN',brand:'7th Street',creator:'@7thstreetburger',place:'NYC',
+   url:'https://www.instagram.com/7thstreetburger/reel/DdsNzV-x0eL/',span:'00:01–00:08.5',
+   src:'assets/10-tezgah.mp4',poster:'assets/10-tezgah.jpg',
+   why:'Fayans + çelik = büfe hissi. Mekân kahraman.',
+   app:'Yavaş giriş → Box · Gobit · Dürüm. “Üç format, aynı Alman.”',
+   cam:'Kontrollü 24/28 yürüyüş.',
+   shots:['Boş tezgâh','Ürünler yerleşir','Trio sabit','Stamp close'],
+   photo:'Geniş tezgâh, çizgiler düz.',
+   edit:'Stabilizasyon + metal ses.'},
+  {id:'11-present',num:'11',title:'Şef present',tag:'COUNTER',brand:'Vamos Smash',creator:'@vamossmash',place:'TR',
+   url:'https://www.instagram.com/vamossmash/reel/Dc-zvT5s3dh/',span:'00:00–00:06.5',
+   src:'assets/11-present.mp4',poster:'assets/11-present.jpg',
+   why:'Çift tepsi kameraya. Tempo + porsiyon.',
+   app:'Gobit + Dürüm veya Box + fries. “Hangisini kaçırıyorsun?”',
+   cam:'Göğüs hizası sabit 35 mm.',
+   shots:['Bakış aşağı','Tepsi öne','Close','Yazı'],
+   photo:'Eye-level tray + stamp.',
+   edit:'Tepsi sürtünme + freeze.'},
+  {id:'12-gold-present',num:'12',title:'Tezgâh enerjisi',tag:'PRESENT · ENERGY',brand:'Goldies',creator:'@goldies_smashburger',place:'Berlin',
+   url:'https://www.instagram.com/goldies_smashburger/reel/Ddy_h3UIjpq/',span:'00:01–00:08',
+   src:'assets/12-gold-present.mp4',poster:'assets/12-gold-present.jpg',
+   why:'Host + tray lineup. Yüksek enerji, tek jest.',
+   app:'Personel siyah tişört, glove. Üç format tepside. Kısa punchline.',
+   cam:'Göğüs hizası, warm LED.',
+   shots:['Jest','Tray öne','Ürün close','Yazı'],
+   photo:'Tray lineup + peçete.',
+   edit:'Enerjik cut, kısa caption.'}
+];
+
+const stillMap=[
+  {src:'assets/f01.jpg',ref:0,label:'Sos kabı'},
+  {src:'assets/f02.jpg',ref:0,label:'Kaldırım bag'},
+  {src:'assets/f03.jpg',ref:1,label:'Bun press'},
+  {src:'assets/f04.jpg',ref:1,label:'Stamp peçete'},
+  {src:'assets/f05.jpg',ref:2,label:'Sos çizgi'},
+  {src:'assets/f06.jpg',ref:3,label:'Eldiven sos'},
+  {src:'assets/f07.jpg',ref:4,label:'Smash glove'},
+  {src:'assets/f08.jpg',ref:4,label:'Melt'},
+  {src:'assets/f09.jpg',ref:5,label:'Tabela'},
+  {src:'assets/f10.jpg',ref:6,label:'Müşteri'},
+  {src:'assets/f11.jpg',ref:7,label:'İçecek'},
+  {src:'assets/f12.jpg',ref:8,label:'Outdoor tray'},
+  {src:'assets/f13.jpg',ref:9,label:'Tezgâh'},
+  {src:'assets/f14.jpg',ref:10,label:'Şef tray'},
+  {src:'assets/f15.jpg',ref:11,label:'Gold present'},
+  {src:'assets/f16.jpg',ref:5,label:'Das cephe'},
+  {src:'assets/f17.jpg',ref:5,label:'Das tabela'},
+  {src:'assets/f18.jpg',ref:5,label:'Açılış / sokak'}
+];
+
+const stillsEl=document.getElementById('stills');
+const filmsEl=document.getElementById('films');
+const dialog=document.getElementById('dialog');
+const media=document.getElementById('media');
+let moving=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+stillMap.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.type='button';b.className='still';
+  b.setAttribute('aria-label',s.label+' çekim notları');
+  b.innerHTML=`<img src="${s.src}" alt="${s.label}" loading="lazy"><span>${String(i+1).padStart(2,'0')} · ${s.label}</span>`;
+  b.onclick=()=>openRef(s.ref,{photo:s.src,photoMode:true});
+  stillsEl.appendChild(b);
+});
+
+refs.forEach((r,i)=>{
+  const art=document.createElement('article');
+  art.className='film';
+  art.innerHTML=`
+    <button class="vbutton" type="button" data-ref="${i}" aria-label="${r.title} videosunu ve çekim notlarını aç">
+      <span class="badge">${r.num}</span>
+      <video muted loop playsinline autoplay preload="metadata" poster="${r.poster}" src="${r.src}"></video>
+      <span class="view">↗ Çekim notu</span>
+    </button>
+    <div class="filmmeta">
+      <small>${r.tag}</small>
+      <h3>${r.title}</h3>
+      <a href="${r.url}" target="_blank" rel="noopener">${r.brand} · ${r.place} ↗</a>
+    </div>`;
+  filmsEl.appendChild(art);
+});
+
+const vids=[...document.querySelectorAll('.film video')];
+function renderMotion(){
+  vids.forEach(v=>moving?v.play().catch(()=>{}):v.pause());
+  document.getElementById('toggle').textContent=moving?'Hareketi durdur':'Hareketi oynat';
+}
+renderMotion();
+document.getElementById('toggle').onclick=()=>{moving=!moving;renderMotion();};
+
+function openRef(i,opts={}){
+  const r=refs[i];
+  vids.forEach(v=>v.pause());
+  if(opts.photoMode){
+    media.innerHTML=`<img class="stillshot" src="${opts.photo}" alt="">`;
+  }else{
+    const origin=vids[i];
+    media.innerHTML=`<video id="detailvideo" muted loop playsinline controls poster="${r.poster}" src="${origin.currentSrc||origin.src}"></video>`;
+    const dv=document.getElementById('detailvideo');
+    if(moving) dv.play().catch(()=>{});
+  }
+  document.getElementById('dindex').textContent=r.num;
+  document.getElementById('dtag').textContent=r.tag;
+  document.getElementById('dtitle').textContent=r.title;
+  document.getElementById('dcredit').textContent=`${r.creator} · ${r.place} / kesit ${r.span}`;
+  document.getElementById('dlink').innerHTML=`<a href="${r.url}" target="_blank" rel="noopener">Tam Reels’i Instagram’da izle ↗</a>`;
+  document.getElementById('dwhy').textContent=r.why;
+  document.getElementById('dapp').textContent=r.app;
+  document.getElementById('dcam').textContent=r.cam;
+  document.getElementById('dshots').innerHTML=r.shots.map(s=>`<li>${s}</li>`).join('');
+  document.getElementById('dphoto').textContent=r.photo;
+  document.getElementById('dedit').textContent=r.edit;
+  dialog.showModal();
+}
+document.querySelectorAll('[data-ref]').forEach(btn=>btn.onclick=()=>openRef(Number(btn.dataset.ref)));
+function closeDialog(){
+  const dv=document.getElementById('detailvideo');
+  if(dv) dv.pause();
+  dialog.close();renderMotion();
+}
+document.getElementById('close').onclick=closeDialog;
+dialog.addEventListener('click',e=>{if(e.target===dialog)closeDialog();});
+</script>
+</body>
+</html>
